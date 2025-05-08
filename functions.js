@@ -60,9 +60,37 @@ function caesarCipher(text, shift) {
   return encrypted;
 }
 
+function analyzeArray(array) {
+  if (!array.length) {
+    return {};
+  }
+
+  let sum = 0;
+  let minNumber = array[0];
+  let maxNumber = array[0];
+
+  for (let element of array) {
+    sum += element;
+    if (element < minNumber) {
+      minNumber = element;
+    }
+    if (element > maxNumber) {
+      maxNumber = element;
+    }
+  }
+
+  return {
+    average: sum / array.length,
+    min: minNumber,
+    max: maxNumber,
+    length: array.length,
+  };
+}
+
 module.exports = {
   capitalize,
   reverseString,
   calculator,
   caesarCipher,
+  analyzeArray,
 };
