@@ -25,8 +25,13 @@ let calculator = {
   },
 };
 
+function caesarCipher(text, shift) {
+
+}
+
 module.exports = {
   capitalize,
   reverseString,
   calculator,
+  caesarCipher,
 };
