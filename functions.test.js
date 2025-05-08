@@ -66,6 +66,5 @@ test("caeser cipher (test 3)", () => {
 });
 
 test("caeser cipher (test 4)", () => {
-    expect(caesarCipher('Hello, World!', 3)).toBe('Khoor, Zruog!');
-  });
-  
+  expect(caesarCipher("Hello, World!", 3)).toBe("Khoor, Zruog!");
+});

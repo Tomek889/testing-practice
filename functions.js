@@ -26,7 +26,38 @@ let calculator = {
 };
 
 function caesarCipher(text, shift) {
+  let encrypted = "";
 
+  shift = shift % 26;
+
+  for (let char of text) {
+    // Check whether a character is a letter
+    if (char.toUpperCase() != char.toLowerCase()) {
+      let charCode = char.charCodeAt(0);
+
+      if (char >= "A" && char <= "Z") {
+        // Uppercase
+        charCode = charCode + shift;
+        if (charCode > 90) {
+          charCode = 65 + (charCode - 91);
+        } else if (charCode < 65) {
+          charCode = 90 - (64 - charCode);
+        }
+      } else if (char >= "a" && char <= "z") {
+        // Lowercase
+        charCode = charCode + shift;
+        if (charCode > 122) {
+          charCode = 97 + (charCode - 123);
+        } else if (charCode < 97) {
+          charCode = 122 - (96 - charCode);
+        }
+      }
+      encrypted += String.fromCharCode(charCode);
+    } else {
+      encrypted += char;
+    }
+  }
+  return encrypted;
 }
 
 module.exports = {
