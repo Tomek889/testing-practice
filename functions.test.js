@@ -1,4 +1,4 @@
-const { capitalize, reverseString } = require("./functions.js");
+const { capitalize, reverseString, calculator } = require("./functions.js");
 
 // capitalize test
 test("capitalize from lowercase (test 1)", () => {
@@ -28,4 +28,21 @@ test("reverses a string (test 2)", () => {
 
 test("reverses a string (test 3)", () => {
   expect(reverseString("12345")).toBe("54321");
+});
+
+// calculator test
+test("calculate addition", () => {
+  expect(calculator.add(4, 2)).toBe(6);
+});
+
+test("calculate subtraction", () => {
+  expect(calculator.subtract(4, 2)).toBe(2);
+});
+
+test("calculate division", () => {
+  expect(calculator.divide(7, 2)).toBeCloseTo(3.5);
+});
+
+test("calculate multiplication", () => {
+  expect(calculator.multiply(4, 2)).toBe(8);
 });
